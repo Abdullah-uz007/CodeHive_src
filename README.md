@@ -9,6 +9,16 @@
 
 ---
 
+## About
+
+CodeHive is a multi-agent AI system built with LangChain and GPT-4o. You give it a project idea, and 5 specialized agents handle the rest — planning, researching, designing the architecture, writing the code, and fixing any errors that come up at runtime.
+
+The Fix agent loops until the code runs clean, so you're not just getting a code dump — you're getting something that's actually been tested.
+
+Built this to explore how far you can push agentic workflows for real developer tasks, not just toy demos.
+
+---
+
 ## What It Does
 
 Each run generates a timestamped project folder under `generated_projects/` and also refreshes `generated_code/` as a copy of the latest output.
@@ -73,8 +83,11 @@ By default, CodeHive **does not** install the generated project's dependencies i
 
 **In the CLI:**
 ```bash
-$env:CODEHIVE_AUTO_INSTALL = "1"  # Windows PowerShell
-export CODEHIVE_AUTO_INSTALL=1    # macOS/Linux
+# Windows PowerShell
+$env:CODEHIVE_AUTO_INSTALL = "1"
+
+# macOS/Linux
+export CODEHIVE_AUTO_INSTALL=1
 ```
 
 ---
@@ -92,7 +105,7 @@ User Prompt + Project Type
         ↓
     [Code Agent]         — generates all files
         ↓
-    [Fix Agent]          — catches and corrects runtime errors
+    [Fix Agent]          — loops until the code runs clean
         ↓
   generated_projects/
 ```
@@ -109,5 +122,4 @@ venv/
 .venv/
 __pycache__/
 generated_projects/**/.venv/
-```
 ```
